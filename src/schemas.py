@@ -12,3 +12,4 @@ class PredictionResponse(BaseModel):
     label: Literal["POSITIVE", "NEGATIVE", "NEUTRAL"]
     score: float  # Score de confiance entre 0.0 et 1.0
     text: str     # Texte original retourné pour traçabilité
+

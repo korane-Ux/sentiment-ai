@@ -4,13 +4,13 @@ from src.model import SentimentModel
 
 app = FastAPI(title="SentimentAI", version="0.1.0")
 
-# Le modèle est chargé une seule fois au démarrage du serveur
+# Le modÃ¨le est chargÃ© une seule fois au dÃ©marrage du serveur
 model = SentimentModel()
 
 
 @app.get("/health")
 def health():
-    """Endpoint de healthcheck utilisé par Docker et les load balancers."""
+    """Endpoint de healthcheck utilisÃ© par Docker et les load balancers."""
     return {"status": "ok"}
 
 
@@ -18,4 +18,3 @@ def health():
 def predict(request: PredictionRequest):
     """Analyse le sentiment du texte fourni et retourne un label + score."""
     return model.predict(request.text)
-
